@@ -1,7 +1,7 @@
 <div class="login-page">
     <div class="form">
         <form [formGroup]="fgValidator" (ngSubmit)="IdentificarUsuario()" class="login-form">
-        <input formControlName="usuario" type="text" placeholder="correo electronico"/>
+        <input formControlName="usuario" type="email" placeholder="correo electronico"/>
         <input formControlName="clave" type="password" placeholder="contraseña"/>
         <button type="submit" >Iniciar Sesión</button>
         <p class="message">Olvidaste la contraseña? <a href="#">Recuperar Contraseña</a></p>
