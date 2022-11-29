@@ -17,12 +17,15 @@ export class ProductoService {
    }
 
 ObtenerRegistro(): Observable<ModeloProducto[]>{
-  return this.http.get<ModeloProducto[]>('localhost:3000/productos');
+  return this.http.get<ModeloProducto[]>(`${this.url}/productos`);
+}
 
+ObtenerRegistroPorId(id: string): Observable<ModeloProducto>{
+  return this.http.get<ModeloProducto>(`localhost:3000/productos/${id}`);
 }
 
 CrearProducto(producto: ModeloProducto): Observable<ModeloProducto>{
-  return this.http.post<ModeloProducto>("localhost:3000/productos", producto,{
+  return this.http.post<ModeloProducto>(`${this.url}/productos`, producto,{
     headers: new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     })
@@ -30,7 +33,7 @@ CrearProducto(producto: ModeloProducto): Observable<ModeloProducto>{
 }
 
 ActualizarProducto(producto: ModeloProducto): Observable<ModeloProducto>{
-  return this.http.put<ModeloProducto>("localhost:3000/productos", producto,{
+  return this.http.put<ModeloProducto>(`${this.url}/productos/${producto.id}`, producto,{
     headers: new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     })

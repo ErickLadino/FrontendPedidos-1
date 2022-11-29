@@ -14,8 +14,8 @@ const cryptoJS = require('crypto-js');
 export class IdentificacionComponent implements OnInit{
 
   fgValidator: FormGroup = this.fb.group ({
-    "usuario":["",[Validators.required, Validators.email]],
-    "clave": ["", [Validators.required]]
+    'usuario':['',[Validators.required, Validators.email]],
+    'clave': ['', [Validators.required]]
   });
 
   constructor (private fb: FormBuilder, 

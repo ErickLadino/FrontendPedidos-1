@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona.component';
 import { CrearPersonaComponent } from './personas/crear-persona/crear-persona.component';
@@ -31,11 +31,15 @@ const routes: Routes = [
     component: CrearProductoComponent
   },
   {
+    path:"listar-productos",
+    component : CrearProductoComponent
+  },
+  {
     path: "buscar-producto",
     component: BuscarProductoComponent
   },
   {
-    path: "editar-producto",
+    path: "editar-producto/:id",
     component: EditarProductoComponent
   },
   {

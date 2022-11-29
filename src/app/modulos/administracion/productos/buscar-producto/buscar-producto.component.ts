@@ -13,11 +13,13 @@ export class BuscarProductoComponent {
 
   constructor(private productoServicio: ProductoService){}
 
-  ngOnInit(): void{}
+  ngOnInit(): void{
+    this.ObtenerListadoProductos();
+  }
 
   ObtenerListadoProductos(){
-    this.productoServicio.ObtenerRegistro().subscribe((datos: ModeloProducto[])=>{
-      this.listadoRegistros =datos;
+    this.productoServicio.ObtenerRegistro().subscribe((datos:ModeloProducto[])=>{
+      this.listadoRegistros = datos;
     })
   }
 
